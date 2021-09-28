@@ -1,7 +1,11 @@
+const { Router } = require('express');
+const router = Router();
+
+
 const {Dog, Temperament}=require('../db');
 require('dotenv').config(); 
 const axios=require('axios');
-const{URL_API,API_KEY}=process.env
+const{URL_API, API_KEY}=process.env
 
 const apiData=async()=>{
     const api=await axios.get(`${URL_API}?api_key=${API_KEY}`);
@@ -17,7 +21,8 @@ const apiData=async()=>{
         }
     });
     return apiInfo
-}
+};
+
 const infoDB=async()=>{
     return await Dog.findAll({
         include:{
