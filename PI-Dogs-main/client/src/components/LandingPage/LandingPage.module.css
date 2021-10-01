@@ -1,0 +1,53 @@
+body{
+    background-image: url("https://image.freepik.com/free-photo/cute-little-dog-impersonating-business-person_23-2148985938.jpg");
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* margin-left: -8px; */
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    /* background-position: center center; background: linear-gradient(#f0ddaa, #a58a40);*/
+    /* position: fixed; */
+}
+h1 { 
+    color: #eec965; 
+    font-family: "Great Vibes", cursive; 
+    font-size: 60px;
+    line-height: 90px; 
+    font-weight: normal; 
+    margin-bottom: 0px; 
+    margin-top: 40px;
+    text-align: center; 
+    text-shadow: 0 1px 1px #fff; 
+}
+.bar {
+    align-items: center;
+    padding: 5px 20px 5px 20px;
+    color:white;
+    background-color: rgba(26, 26, 26, 0.849);
+    border: none;
+}
+.btn {
+    position: relative;
+    display: inline-block;
+    margin-left: 1100px;
+    font-family: "Rouge Script" , cursive;
+    padding: 10px 30px;
+    color: rgb(255, 255, 255); 
+    background-color: transparent;
+    border: none;
+    letter-spacing:4px;
+    font-size: 24px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.2; 
+      
+    
+} 
+.btn:hover { 
+    background-color: #eec965;
+    box-shadow: 0 0 10px #eec965, 0 0 30px 
+    #eec965, 0 0 30px #eec965;
+    transition-delay: 0.5s;
+}

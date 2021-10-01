@@ -1,6 +1,3 @@
-const { Router } = require('express');
-const router = Router();
-
 
 const {Dog, Temperament}=require('../db');
 require('dotenv').config(); 
@@ -13,8 +10,8 @@ const apiData=async()=>{
         return{
             id:e.id,
             name:e.name,
-            heigth:e.heigth.imperial,
-            weigth:e.weigth.imperial,
+            heigth:e.height.metric,
+            weight:e.weight.metric,
             life_span:e.life_span,
             image:e.image.url,
             temperament:e.temperament
@@ -30,7 +27,7 @@ const infoDB=async()=>{
             attributes:['name'],
             through:{
                 attributes:[]
-            }
+            },
         }
     });
 };
@@ -46,4 +43,4 @@ module.exports={
     apiData,
     infoDB,
     allDogs
-}
+};

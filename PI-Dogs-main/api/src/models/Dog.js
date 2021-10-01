@@ -32,6 +32,7 @@ module.exports = (sequelize) => {
       type:DataTypes.STRING,
       allowNull:false
     },
+    // string(url)
     image:{
       type:DataTypes.STRING,
       allowNull:true
@@ -41,6 +42,5 @@ module.exports = (sequelize) => {
       allowNull: false,
       defaultValue: true
     },
-  
   });
 };

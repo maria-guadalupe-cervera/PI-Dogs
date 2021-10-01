@@ -5,7 +5,7 @@
 const {Router}=require('express');
 const router=Router();
 
-const{Dog, Temperament, dog_temperament}=require('../db');
+const{Temperament}=require('../db.js');
 require("dotenv").config();
 const axios =require('axios');
 const{URL_API,API_KEY}=process.env;
