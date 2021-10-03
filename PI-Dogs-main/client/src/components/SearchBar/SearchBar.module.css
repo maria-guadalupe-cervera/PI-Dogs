@@ -1,41 +1,53 @@
 .searchBar {
-    background-color: whitesmoke;
+   /*  background-color: whitesmoke;
     margin-left: 23px;
     margin-top: -80px;
     border: none;  
     border-radius: 5px;
     width: 250px;
     height: 40px;
-    display: top;
+    display: top; */
     /* position: relative; top: 10%; bottom: -5%; */
     /* align-items: flex-start; */
+    background-color: #fdf6fc73;
+    font-family: 'Montserrat Alternates', sans-serif;
+    position: fixed;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    align-items: center;
+    height: 60px;
+    
 }
 
 .button {
     background: transparent; 
     border: transparent;
-    color: black;
-    margin-top: 3%; 
+    color: white;
     margin-left: 25px;
-    
+    font-family: 'Montserrat Alternates', sans-serif;
+    cursor: pointer;
     
 }
 
 .button:hover {
-    padding: 7px;
-    background-color: wheat;
-    color: black;
-    /* margin: -2px; */
+   
+    color: rgb(66, 2, 45);
+    background-color: #fdf6fc73;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.377), 0 0 10px rgba(255, 255, 255, 0.377), 0 0 10px rgba(255, 255, 255, 0.377);
+    border: none;
 }
 .input{
-    margin-top: 10px;
-    margin-left: 20px;
-    border-color: rgba(240, 248, 255, 0);
+    text-align: center;
+    /* border-color: rgba(240, 248, 255, 0); */
     background: transparent; 
     border: none;
-    font-family:'Gill Sans';
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: rgb(66, 2, 45);
     
-    
+}
+.input:focus{
+    outline: none;
 }
 
 

@@ -26,7 +26,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import LandingPage from './components/LandingPage/LandingPage.jsx' 
 import Home from './components/Home/Home'
 import DogCreated from './components/DogCreated/DogCreated.jsx';
-import Detail from './components/Card/Card.jsx';
+import Detail from './components/Detail/Detail.jsx';
 
 function App() {
   return ( 
