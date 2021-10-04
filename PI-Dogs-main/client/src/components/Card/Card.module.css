@@ -1,27 +1,69 @@
-.title {
-    text-decoration: 'none';
-    padding: 10px;
-    font-size: 25px;
-    color: #24588b;
-    /* text-transform: uppercase; */
-    font-weight: 1000;
-    /* font-family: "Courier New"; */
-   
+body{
+    font-family: 'Montserrat Alternates', sans-serif;
 }
+
+.box{
+    margin-left:35px;
+    justify-content: center;
+    background-color: #fdf6fc73;
+    border-radius: 10px;
+    height: 260px;
+    width: 240px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+
+}
+.breed {
+    text-decoration: 'none';
+    font-size: 15px;
+    color: rgb(116, 3, 78);
+    font-weight: 20px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    text-align: center;
+    padding-top: 5px;
+    margin-top: 15px;
+    height: 30px;
+    width: 240px;
+    z-index: 1;
+}
+
 
 .titleTemps {
     font-size: 20px;
-    color: #043261;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(66, 2, 45);
     text-decoration: 'none';
     
 }
 .image {
-    height: 230px;
-    width: 230px;
-    border-color: black;
-    border-radius: 10%;
+    width:180px;
+    height: 180px;
+    border-radius: 7%;
     justify-content: center;
-    
+    margin-top: 20px;
+    z-index: 1;
     
 }
+.overlay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color:#fdf6fc81;
+    color:rgb(66, 2, 45) ;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+    border-radius: 7%;
+    backdrop-filter: blur 4px;
+    font-weight:80px;
+    
+}
+
+.box:hover .overlay{
+    height: 100%;
+   
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap');

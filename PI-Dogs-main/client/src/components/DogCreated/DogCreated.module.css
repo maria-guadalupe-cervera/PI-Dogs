@@ -102,7 +102,7 @@
     color: solid black;
     border-color: solid black;
     text-transform: uppercase;
-    /* background-color: rgb(207, 170, 89); */
+   
     background: linear-gradient(#f0ddaa, #a58a40);
     border-radius: 9px;
     margin-top: 15px;
@@ -120,11 +120,3 @@
     color: #ebbb37;
 
 }
-/* .danger {
-    color: red;
-    font-size: 15px;
-}
-.inputDanger {
-    border-color: red;
-    list-style: none;
-} */

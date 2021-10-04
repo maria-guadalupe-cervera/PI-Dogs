@@ -1,14 +1,25 @@
 import React from "react";
 import style from'./Card.module.css';
 
-export default function Card({name,image,temperament}){
+export default function Card({name,image,temperament,weight}){
     return(
         <div>
-            <h3 className={style.title}>{name}</h3>
-            <img className={style.image} src={image} alt='Not found'width='200px' height='250px'></img>
-            <h3 className={style.titleTemps}>
-            {temperament}
+        <div className={style.box}>
+            <div className={style.ca}>
+            <img className={style.image} src={image} alt='Not found'></img>
+            <h4 className={style.breed}>{name}</h4>
+         </div>
+           <div className={style.overlay}>
+              
+            <h3 className={style.peso}>
+                {weight}
             </h3>
+           
+            <h2 className={style.titleTemps}>
+            {temperament}
+            </h2>
+            </div>
+        </div>
         </div>
     )
 };

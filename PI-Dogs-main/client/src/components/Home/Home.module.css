@@ -5,36 +5,12 @@ body{
   background-repeat: no-repeat;
   width: 100vw;
   height: 100vh; 
-  
+  background-color: rgb(252, 225, 238);
 }
-/* .contenedor { 
-    text-decoration: none;
-    margin-top: 10px;
-    margin: 10px;
-    width: 300px;
-    height: 450px;
-    align-items: center; 
-    text-align: center;
-    display: inline-block;
 
-    background:rgba(248, 161, 0, 0.212);
-    border-radius: 12px;
-    padding-left: 5px;
-    padding-right: 10px;
-    justify-content:center;
-    margin-left: 70px;
-    z-index: -1;    
-
-} */
 .containsAll{
     font-family: 'Montserrat Alternates', sans-serif;
     
-  background-position: center; 
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: 100vh; 
-  display: grid;
 }
 .nav{
     background-color: rgba(196, 165, 189, 0.521);
@@ -44,7 +20,7 @@ body{
     position: sticky;
 }
 .head{
-    position: fixed;
+position: fixed;
     font-family:'Major Mono Display', monospace ;
     color:#fff;
     font-size:70px;
@@ -52,15 +28,15 @@ body{
     font-weight: normal; 
     text-shadow: 6px 6px 4px rgba(44, 11, 34, 0.473);
     margin-left: 40%;
-    z-index: 2;
+  
 }
 
 .created{
     text-decoration: none;
-    color: solid white;
+    color: white;
     position: fixed;
     background: transparent;
-    border-radius: 2px;
+    border-radius: 7px;
     margin-top: 20px;
     margin-left: 91%;
     font-size: 15px;
@@ -70,35 +46,35 @@ body{
     grid-column-end: auto;
     text-align: right;
     cursor: pointer;
+    background-color: #fdf6fc73;
+    padding: 2px;
     
 }
 .created:hover{
     background-color: #fdf6fc73;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.377), 0 0 10px rgba(255, 255, 255, 0.377), 0 0 10px rgba(255, 255, 255, 0.377);
+
 }
-.created:focus{
-    outline: none;
-    
-}
-.created select:active{
-    background-color: violet;
-}
+
 .reload{
     margin-left: 91%;
-    margin-top: 65px;
+    margin-top: 70px;
     align-items: center;
     font-family: 'Montserrat Alternates', sans-serif;
     background-color: transparent;
-    color: white;
+    
     text-decoration: none;
     border-radius: 5px;
     border:none;
     text-align: right;
     cursor: pointer;
+    color: rgb(66, 2, 45);
+    background-color: #fdf6fc73;
 }
 .reload:hover{
     background-color: #fdf6fc73;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.377), 0 0 10px rgba(255, 255, 255, 0.377), 0 0 10px rgba(255, 255, 255, 0.377);
+    color: white;
 }
 .selectAC{
     background-color: #fdf6fc73;
@@ -115,16 +91,18 @@ body{
     background-color: #fdf6fc73;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.377), 0 0 10px rgba(255, 255, 255, 0.377), 0 0 10px rgba(255, 255, 255, 0.377);
     border: none;
+    
 }
 .search{
     background-color: #fdf6fc73;
     font-family: 'Montserrat Alternates', sans-serif;
     position: fixed;
-    color: white;
+    color: rgb(66, 2, 45);
     border-radius: 5px;
     margin-left: 81.3%;
     margin-top: 9px;
 }
+
 .order{
     position: fixed;
    margin-left: 2%;
@@ -144,9 +122,8 @@ select{
     color: rgb(66, 2, 45);
     height: 17px;
     margin-left: 10px;
-    /* -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;     */
+    
+   
 }
 select:focus{
     outline: none;
@@ -157,11 +134,7 @@ select:hover{
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.377), 0 0 10px rgba(255, 255, 255, 0.377), 0 0 10px rgba(255, 255, 255, 0.377);
     border: none;
 }
-select::-ms-expand{
-    background-color: rgb(190, 0, 190);
-    border: none;
-    border-radius: 5px;
-}
+
 
 
 .alf{
@@ -178,10 +151,6 @@ select::-ms-expand{
 }
 .back{
     z-index: 4px;
-    position:sticky;
-    display: flex;
-    margin-top:37%;
-    margin-left:95%;
     border: none;
     font-family: 'Montserrat Alternates', sans-serif;
     background-color: #c485baa2;
@@ -191,8 +160,7 @@ select::-ms-expand{
     cursor: pointer;
     width: 70px;
     height: 30px;
-    padding-top: 7px;
-    padding-left: 18px;
+    z-index: 4;
 }
 .back:hover{
     background-color: #fdf6fc73;
@@ -200,156 +168,49 @@ select::-ms-expand{
     border: none;
     color: rgb(66, 2, 45);
 }
-@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
-/* .contenedor:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 10px rgb(255, 251, 251);
-}
- */
 
-/* .direccion {
+
+
+.contenedor{
+ 
+    padding-left: 40px;
+    margin-top: 10px;
+    margin-left: 40px;
+
+}
+
+
+.direccion {
     display: flex;
     flex-direction: row;
     flex-flow: row wrap;
-    padding: 10px;
+    margin-top:15px;
+
+   
 }
-   */
-/* .pagination li {
+  
+.pagination li {
     color: aliceblue;
     display: inline-flex;
-    padding: 10px;
-    border: 1px solid black;
+    padding: 12px;
+    margin-left: 2px;
+    border: none;
     cursor: pointer;
-    
-    background:rgba(255, 160, 82, 0.849);
+    background-color: #c485ba83;
     border-radius: 10%;
     list-style:none;
- 
-} */
-/*   
-.pagination li:hover {
-    background-color: transparent;
-    color: rgb(235, 231, 231);
-    transform: scale(1.10);
-    box-shadow: 0 5px 10px rgb(196, 192, 192);
-
-} */
-/* .button {
-    position: relative; right: 39%; bottom: -5%;
-    font-family:Georgia;
-    color: solid black;
-    border-color: solid black;
-    
-    background: linear-gradient(#f0ddaa, #a58a40);
-    border-radius: 9px;
-    margin-top: 25px;
-    margin-left: 10px;
-    color: solid black;
-    font-size: 13px;
-    font-weight: 800;
-    width: 60px;
-    height: 40px;
-    
-} */
-  
-/* .button:hover{
-    color: rgb(255, 249, 249);
-    border-color: solid black;
-    background-color: transparent;
-} */
-/* .temptContainer { 
-    position: relative; left: 40%; bottom: -5%;
-    font-family:Georgia;
-  
-    background: linear-gradient(#f0ddaa, #a58a40);
-    border-radius: 9px;
-    margin-top: 15px;
-    margin-left: 10px;
-    color: solid black;
-    border-color: solid black;
-    font-size: 13px;
-    font-weight: 800;
-    width: 150px;
-    height: 50px;
-    cursor: pointer;
-    
-    
-} */
-  
-/* .button2 {
-    position: relative; left: 30%; bottom: 15%;
-    font-family: Montserrat;
-    color: solid black;
-    border-color: solid black;    
-    background-color: rgb(246, 255, 126);
-    border-radius: 999px;
-    margin-top: 0%;
-    margin-left: 8px;
-    color: solid black;
-    font-size: 13px;
-    font-weight: 800;
-    width: 60px;
-    height: 60px;
-} */
-/* .reload{
-    position: relative; left: 40%; bottom: -5%;
-    font-family:Georgia;
-    border-color: solid black;
-   
-    background: linear-gradient(#f0ddaa, #a58a40);
-    border-radius: 9px;
-    margin-top: 15px;
-    margin-left: 10px;
-    color: solid black;
-    font-size: 13px;
-    font-weight: 800;
-    width: 150px;
-    height: 50px;
-    cursor: pointer;
-    
-
-} */
-/* .reload:hover{
-    color: rgb(255, 249, 249);
-    border-color: solid black;
-    background-color: transparent;
+    width: 5px;
+    height: 5px;
+    font-size: 12px;
+    align-items: center
 }
-.created{
-    text-decoration: none;
-    padding-top: 15px;
-    color: solid black;
-    position: relative; left: 40%; 
-    font-family:Georgia;
-    border-color: solid black;
-    background: linear-gradient(#f0ddaa, #a58a40);
-    border-radius: 9px;
-    margin-top: 10px;
-    margin-left: 10px;
-    font-size: 20px;
-    font-weight: 800;
-    width: 200px;
-    height: 50px;
-    
-    
-} */
-/* .back{
-    position: relative; right: 42%; bottom: -5%;
-    font-family:Georgia;
-    color: solid black;
-    border-color: solid black;
-    background: linear-gradient(#f0ddaa, #a58a40);
-    border-radius: 9px;
-    margin-top: 15px;
-    margin-block-end: 10px;
-    color: solid black;
-    font-size: 13px;
-    font-weight: 800;
-    width: 150px;
-    height: 50px;
-} */
-/* .back:hover{
-    color: rgb(255, 249, 249);
-    border-color: solid black;
-    background-color: transparent;
-} */
+.pagination li:hover{
+    width: 8px;
+    height: 8px;
+    background-color: #fdf6fc73;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.377), 0 0 10px rgba(255, 255, 255, 0.377), 0 0 10px rgba(255, 255, 255, 0.377);
+    border: none;
+    color: rgb(66, 2, 45);
+}
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');

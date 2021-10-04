@@ -11,28 +11,6 @@ const axios =require('axios');
 const{URL_API,API_KEY}=process.env;
 
 router.get('/temperament',async(req,res)=>{
-    // let temps=[];
-    // const tempsApi=await axios.get(`${URL_API}?api_key=${API_KEY}`); //conecto la api
-    // const temperaments=tempsApi.data.map(tem=>tem.temperament);//lo busco
-    // let tempDiv=temperaments.map(e=>e&&e.split(', '));//como es un arry lo divido 
-    // let tempArr=tempDiv.flat().sort(); //flat concatena todos los temps en uno array / sort ordena de may a men (alfabeticamente)
-    // tempDiv.map(e=>{
-    //     if(e!==undefined){
-    //         temps.push(e)
-    //     }
-    // });
-    // let tempG=temps.filter((item,index)=>{
-    //     return temps.indexOf(item)===index;
-    // })
-    // /* console.log(tempG) */
-    // for (let i = 0 ; i < tempG.length ; i++) {
-    //     Temperament.findOrCreate({
-    //         where: {name: tempG[i]}
-    //     })
-    // };    
-        
-    // const allTemperaments = await Temperament.findAll();
-    // res.send(allTemperaments)
     var tempsEnds = [];
     const apiTemperament = await axios.get(`${URL_API}?api_key=${API_KEY}`);
     const temperaments = apiTemperament.data.map(t => t.temperament);

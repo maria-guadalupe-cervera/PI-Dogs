@@ -18,6 +18,7 @@ export default function SearchBar(){
         setName('');
     };
     return(
+  
         <div className={style.SearchBar}>
             <input className={style.input}
             type='text'
@@ -30,5 +31,6 @@ export default function SearchBar(){
             Search
             </button>
         </div>
+        
     )
 }

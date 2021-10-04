@@ -10,8 +10,8 @@ const apiData=async()=>{
         return{
             id:e.id,
             name:e.name,
-            heigth:e.height.metric,
-            weight:e.weight.metric,
+            height:e.height.imperial,
+            weight:e.weight.imperial,
             life_span:e.life_span,
             image:e.image.url,
             temperament:e.temperament

@@ -1,17 +1,8 @@
+
 .searchBar {
-   /*  background-color: whitesmoke;
-    margin-left: 23px;
-    margin-top: -80px;
-    border: none;  
-    border-radius: 5px;
-    width: 250px;
-    height: 40px;
-    display: top; */
-    /* position: relative; top: 10%; bottom: -5%; */
-    /* align-items: flex-start; */
+   
     background-color: #fdf6fc73;
     font-family: 'Montserrat Alternates', sans-serif;
-    position: fixed;
     color: white;
     border: none;
     border-radius: 7px;
@@ -39,7 +30,7 @@
 }
 .input{
     text-align: center;
-    /* border-color: rgba(240, 248, 255, 0); */
+
     background: transparent; 
     border: none;
     font-family: 'Montserrat Alternates', sans-serif;

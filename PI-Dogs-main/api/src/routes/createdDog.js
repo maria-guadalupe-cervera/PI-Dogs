@@ -9,7 +9,7 @@ router.post('/dog',async(req,res)=>{
     let{
         name,
         height,
-        weigth,
+        weight,
         life_span,
         image,
         createInDb,
@@ -19,7 +19,7 @@ router.post('/dog',async(req,res)=>{
     let dogCreated=await Dog.create({
         name,
         height,
-        weigth,
+        weight,
         life_span,
         image,
         createInDb

@@ -7,7 +7,7 @@ import Card from'../Card/Card';
 import Paged from '../Paged/Paged';
 import style from './Home.module.css';
 import SearchBar from '../SearchBar/SearchBar';
-import image from '../../media/patitas.jpg';
+/* import image from '../../media/patitas.jpg'; */
 
 export default function Home(){
     const dispatch=useDispatch();
@@ -51,7 +51,7 @@ export default function Home(){
 
     return(
            
-         <div className={style.containsAll}>
+         <div>
              <div className={style.nav}>
                  <div className={style.head}>
                      <h1>DOoGLE</h1>
@@ -74,17 +74,18 @@ export default function Home(){
                 <div className={style.order}>
                 <div className={style.alf}>
                 <h5>Order by alphabet:</h5>
-                <select onClick={e=>handleOrder}>
-                    <option value='Asc' onClick={e=>handleOrder(e)}>A-Z</option>
-                    <option value='Desc' onClick={e=>handleOrder(e)}>Z-A</option>
+                <select onClick={e=>handleOrder(e)} >
+                    <option value='Asc'>A-Z</option>
+                    <option value='Desc'>Z-A</option>
                 </select>
                 </div>
                 <div className={style.weight}>
                     <h5>Order by weight:</h5>
-                <select onClick={e=>handleOrder}>
-                    <option value='Weight 1' onClick={e=>handleOrderByWeight(e)}>Small</option>
-                    <option value='Weight 2' onClick={e=>handleOrderByWeight(e)}>Big</option>
+                <select onClick={(e)=>handleOrderByWeight(e)} >
+                    <option value='Weight 1'>Small</option>
+                    <option value='Weight 2'>Big</option>
                 </select>
+                </div>
                 </div>
                 </div>
                 <div className={style.direccion}>
@@ -92,8 +93,9 @@ export default function Home(){
                     return(
                         <div className={style.contenedor} > 
                             <NavLink style={{ textDecoration: 'none' }} to ={ '/home' + e.id }>
-                            <Card name  = {e.name} 
-                                image = {e.image? e.image : e.imagen}
+                                 <Card name  = {e.name} 
+                                 image={e.image}
+                                 weight={e.weight}
                                 temperament = {e.temperament? e.temperament : e.temperaments && e.temperaments.map(t =>t.name.concat(" "))}
                                 key = {e.id}/>
                             </NavLink>
@@ -112,43 +114,8 @@ export default function Home(){
             <Link to='/'><button className={style.back} >Back</button></Link>
             </div> 
              </div>
-             {/* 
-
-                <div className={style.order}>
-                <button className={style.button}
-                onClick={(e)=>handleOrder(e)}
-                value='Asc'>A-Z</button>
-                <button className={style.button} onClick={(e) => handleOrder(e)} value='Desc'>Z-A</button>
-                <button className={style.button} onClick={(e) => handleOrderByWeight(e)} value= 'Weight 1'>SMALL</button>
-                <button className={style.button} onClick={(e) => handleOrderByWeight(e)} value= 'Weight 2'>BIG</button>
-                </div>
-           
-            <div className={style.direccion}>
-                {currentDog?.map((e) =>{
-                    return(
-                        <div className={style.contenedor} > 
-                            <NavLink style={{ textDecoration: 'none' }} to ={ '/home' + e.id }>
-                            <Card name  = {e.name} 
-                                image = {e.image? e.image : e.imagen}
-                                temperament = {e.temperament? e.temperament : e.temperaments && e.temperaments.map(t =>t.name.concat(" "))}
-                                key = {e.id}/>
-                            </NavLink>
-                        </div>
-                    )
-            })}                
-            </div>
-            <div className={style.pagination}>
-                <Paged
-                    dogsPage = {dogsPage}
-                    allDogs = {allDogs.length}
-                    pagedTotal = {pagedTotal}
-                />
-            </div> 
-             <div>
-            <Link to='/'><button className={style.back} >Back</button></Link>
-            </div> 
-         </div>  */}
-         </div>
+            
+        
         
     )
 }

@@ -1,20 +1,22 @@
-import React from "react";
+import React from 'react';
 
-export default function Paged({dogsPaged,allDogs,pagedTotal}){
-    const numPages=[]
-    const pages=Math.ceil(allDogs/dogsPaged);
 
-    for(let i=1;i<=pages; i++){
+export default function Paged ({dogsPage,allDogs,pagedTotal}) {
+    const numPages = []; 
+    const paginado = Math.ceil(allDogs/dogsPage);
+
+    for (let i = 1; i <= paginado; i++) {
         numPages.push(i)
+        
     }
 
-    return(
+    return (
         <nav>
             <ul>
-                {numPages?.map(num=>(
+                {numPages?.map(num =>(
+                    // eslint-disable-next-line react/jsx-no-comment-textnodes
                     <li key={num}>
-                        <a onClick={()=>
-                        pagedTotal(num)}>{num}</a>
+                        <a onClick={()=> pagedTotal(num)}>{num}</a>
                     </li>
                 ))}
             </ul>
