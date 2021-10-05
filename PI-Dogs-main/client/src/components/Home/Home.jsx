@@ -51,7 +51,8 @@ export default function Home(){
 
     return(
            
-         <div>
+         <div className={style.containsAll}>
+            
              <div className={style.nav}>
                  <div className={style.head}>
                      <h1>DOoGLE</h1>
@@ -88,6 +89,7 @@ export default function Home(){
                 </div>
                 </div>
                 </div>
+               
                 <div className={style.direccion}>
                 {currentDog?.map((e) =>{
                     return(

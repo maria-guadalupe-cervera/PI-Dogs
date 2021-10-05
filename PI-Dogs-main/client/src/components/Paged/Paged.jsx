@@ -14,7 +14,7 @@ export default function Paged ({dogsPage,allDogs,pagedTotal}) {
         <nav>
             <ul>
                 {numPages?.map(num =>(
-                    // eslint-disable-next-line react/jsx-no-comment-textnodes
+                    
                     <li key={num}>
                         <a onClick={()=> pagedTotal(num)}>{num}</a>
                     </li>

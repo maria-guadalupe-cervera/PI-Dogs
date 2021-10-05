@@ -1,24 +1,23 @@
-body{
+
+.containsAll{
+    font-family: 'Montserrat Alternates', sans-serif;
     background-image: url(../../media/smile.png);
   background-position: center; 
   background-size: cover;
   background-repeat: no-repeat;
-  width: 100vw;
-  height: 100vh; 
+  width: 100%;
+  height: 100%; 
   background-color: rgb(252, 225, 238);
-}
 
-.containsAll{
-    font-family: 'Montserrat Alternates', sans-serif;
-    
 }
 .nav{
     background-color: rgba(196, 165, 189, 0.521);
     backdrop-filter: blur(1px);
     margin-top: 0;
     height:150px;
-    position: sticky;
+    
 }
+
 .head{
 position: fixed;
     font-family:'Major Mono Display', monospace ;

@@ -1,65 +1,69 @@
+
 .title {
     text-decoration: 'none';
-    padding: 10px;
+    padding: px;
     font-size: 25px;
-    color: #24588b;
-    /* text-transform: uppercase; */
-    font-weight: 1000;
-    /* font-family: "Courier New"; */
+    color: rgb(66, 2, 45);
    
+    font-weight: 1000;
+    
+    font-family: 'Montserrat Alternates', sans-serif;
 }
 .text {
     font-size: 20px;
-    color: #043261;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:rgb(66, 2, 45);
+    font-family: 'Montserrat Alternates', sans-serif;
     text-decoration: 'none';
 }
 .back {
-    position: relative; right: 130%; bottom: -5%;
-    font-family:Georgia;
-    color: solid black;
-    border-color: solid black;
-    /* background-color: rgb(207, 170, 89); */
-    background: linear-gradient(#f0ddaa, #a58a40);
-    border-radius: 9px;
-    margin-top: -95px;
-    /* margin-left: 10px;  */
-    /* margin-block-end: 100px; */
-    color: solid black;
-    font-size: 13px;
-    font-weight: 800;
-    width: 150px;
+
+    border: none;
+    font-family: 'Montserrat Alternates', sans-serif;
+    background-color: #d490b2a2;
+    color: white;
+    border-radius: 10px;
+    text-align:center;
+    cursor: pointer;
+    width: 90px;
     height: 50px;
+    z-index: 4;
     
 }
 .back:hover{
-    color: rgb(255, 249, 249);
-    border-color: solid black;
-    background-color: transparent;
+    background-color: #fdd6f773;
+    box-shadow: 0 0 10px rgba(128, 3, 107, 0.452), 0 0 10px rgba(128, 67, 85, 0.863), 0 0 10px rgba(255, 255, 255, 0.541);
+    border: none;
+    color: rgb(66, 2, 45);
 }
+
 .contenedor {
+    
     text-decoration: none;
-    margin-top: 10px;
-    margin: 100px;
-    width: 400px;
+    width: 800px;
     height: 600px;
     align-items: center; 
     text-align: center;
-    display: inline-block;
-    /* background-color: rgb(252, 221, 173); */
-    background: linear-gradient(#f0ddaa, #a58a40);
+    background-color: rgba(235, 224, 229, 0.616);
     border-radius: 5%;
-    padding-left: 5px;
-    padding-right: 10px;
     justify-content:center;
-    margin-left: 70px;
-    /* background-color: rgb(253, 226, 182);
-    background-color: rgb(184, 226, 243); */
+    backdrop-filter: blur 4;
+    margin-top: 60px;
+    padding-top: 10px;
+    padding-left: 10px;
+    justify-content:center;
+    margin-left: 400px;
+    position: fixed;
+    box-shadow: 0 0 10px rgba(128, 3, 107, 0.452), 0 0 10px rgba(128, 67, 85, 0.863), 0 0 10px rgba(255, 255, 255, 0.541);
+}
+.contenedor:hover{
+    background-color: rgba(245, 228, 236, 0.616);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.377), 0 0 10px rgba(255, 255, 255, 0.377), 0 0 10px rgba(255, 255, 255, 0.377);
 }
 .image {
     height: 250px;
     width: 300px;
-    border-color: black;
-    border-radius: 20%;
+    border-radius: 8%;
     justify-content: center;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap');

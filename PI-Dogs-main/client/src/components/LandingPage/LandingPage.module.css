@@ -16,7 +16,7 @@ h1 {
     text-align:left;
     font-weight: normal; 
     text-shadow: 6px 6px 4px rgba(44, 11, 34, 0.473);
-    
+    font-family:'Major Mono Display', monospace ;
 }
 .bar {
     background-color: rgba(196, 165, 189, 0.438);

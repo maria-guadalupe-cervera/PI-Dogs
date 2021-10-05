@@ -26,6 +26,7 @@ body{
     height: 30px;
     width: 240px;
     z-index: 1;
+    text-shadow: 2px 2px 3px rgba(44, 11, 34, 0.623);
 }
 
 
@@ -63,7 +64,7 @@ body{
 
 .box:hover .overlay{
     height: 100%;
-   
+    box-shadow: 0 0 10px rgba(128, 67, 85, 0.863), 0 0 10px rgba(128, 67, 85, 0.863), 0 0 10px rgba(128, 67, 85, 0.863);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap');
