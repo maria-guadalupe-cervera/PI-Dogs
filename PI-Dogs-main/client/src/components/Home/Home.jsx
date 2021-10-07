@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink,Link } from "react-router-dom";
 import { useState,useEffect } from "react";
 import{useDispatch,useSelector}from 'react-redux';
-import{getDogs,byOrder,byOrderWeight,filterDogsCreated}from'../../actions/index';
+import{getDogs,byOrder,byOrderWeight,filterDogsCreated,filterByTemp}from'../../actions/index';
 import Card from'../Card/Card';
 import Paged from '../Paged/Paged';
 import style from './Home.module.css';
@@ -18,7 +18,7 @@ export default function Home(){
     const indexLastDog=currentPage*dogsPage;
     const indexFirstDog=indexLastDog-dogsPage;
     const currentDog=allDogs.slice(indexFirstDog,indexLastDog);
-
+    /* const[temp, setTemps]=useState('All'); */
     const pagedTotal=(numPage)=>{
         setCurrentPage(numPage)
     };
@@ -48,6 +48,12 @@ export default function Home(){
         setCurrentPage(1);
         setOrder(e.target.value)
     };
+    /* function handleTemps(e){
+        e.preventDefault();
+        setCurrentPage(1);
+        setTemps(e.target.value);
+        dispatch(filterByTemp(e.target.value))
+    } */
 
     return(
            
@@ -69,6 +75,13 @@ export default function Home(){
                     <option value='All'>All</option>
                     <option value='Created'>Created</option>
                 </select>
+                {/* <span>Temperaments</span>
+                <select value={temp}onChange={handleTemps}>
+                    <option value='All'>All</option>
+                    {temperaments.map((t,id)=>{
+                        return <option key={id} value={t}>{t}</option>
+                    })}
+                </select> */}
                 <div className={style.search}>
                 <SearchBar/>
                 </div>

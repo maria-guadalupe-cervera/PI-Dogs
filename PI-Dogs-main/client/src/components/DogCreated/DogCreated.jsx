@@ -9,14 +9,16 @@ import style from './DogCreated.module.css'
 
 export default function DogCreated (){ 
     const dispatch = useDispatch();
-    const temperament = useSelector((state) => state.temperament)
-       
+    const temperaments = useSelector((state) => state.temperament)
+    const [temps, setTemps] = useState([])    
 
     const [input,setInput] = useState({
         name: "",        
-        height: "",
-        weight: "",
-        life_span: "",
+        min_height: '',
+        max_height: '',
+        min_weight: '',
+        max_weight: '',
+        life_span:'',
         image:"",
         temperament: []
     })
@@ -27,6 +29,7 @@ export default function DogCreated (){
     },[]);
 
     function handleChange(e){
+        e.preventDefault()
         setInput({
             ...input,
             [e.target.name] : e.target.value
@@ -34,34 +37,51 @@ export default function DogCreated (){
        
     };
     function handleSelect(e) {
-            if (input.temperament.includes(e.target.value)) {
-                alert("Repeated temperament, choose another");                
+           
+            if(!temps.includes(e.target.value)){
                 
-            }else{
-                setInput((temps) => ({
-                    ...temps,
-                    temperament: [...temps.temperament, e.target.value],
-                  }));
-                
-            }
-        
+                if(temps.length > 0){
+                    setTemps([...temps, e.target.value])
+                } else {
+                    setTemps([e.target.value])
+                }
+            } 
+    
+    }
+    function handleClick(e){
+        e.preventDefault()
+        setTemps(temps.filter(t => t !== e.target.value))
     }
 
     function handleSubmit(e) {
-        e.preventDefault();
-        console.log(input) 
-        dispatch(postDogs(input)); 
-        alert('Doggie created!');
-        setInput({
-            name: "",
-            height: "",
-            weight: "",
-            life_span: "",
-            image:"",
-            temperament: []
+       
+        e.preventDefault()
+        
+        const addDog= {
+            name: input.name,
+            height: `${input.min_height} - ${input.max_height}`,
+            weight: `${input.min_weight} - ${input.max_weight}`,
+            life_span: input.life_span,
+            image: input.image,
+            temperament: temps
+        }
+        dispatch(postDogs(addDog))
+       
+       setInput({
+        name: "",        
+        min_height: '',
+        max_height: '',
+        min_weight: '',
+        max_weight: '',
+        min_life_span:'',
+        life_span: '',
+        image:'',
+        temperament: []
 
 
-        })
+    })
+        setTemps([])
+        
     }
 
     return (
@@ -83,30 +103,18 @@ export default function DogCreated (){
                                 required>                                  
                             </input>
                         </div>
-                        <div>
-                            <input 
-                                className={style.input}
-                                placeholder='Height Max - Height Min'
-                                type='text'
-                                name='height'
-                                value={input.height}
-                                onChange={(e) => handleChange(e)}
-                                required> 
-                            </input>
-                           
+                        <div className={style.minMax}>
+                                <input onChange={handleChange} className={style.input} name="min_weight" type="min_weight" value={input.min_weight} placeholder='Min_weight'/>
+                                <input onChange={handleChange}  className={style.input}name="max_weight" type="max_weight" value={input.max_weight} placeholder='Max_weight'/>
+            
                         </div>
-                        <div>
-                            <input 
-                                className={style.input}
-                                placeholder='Weight Max - Weight Min'
-                                type='text'
-                                name='weight'
-                                value={input.weight}
-                                onChange={(e) => handleChange(e)}
-                                required>  
-                            </input>
+                        <div className={style.minMax}>
+            
+                                <input className={style.input}onChange={handleChange} name="min_height" type="min_height" value={input.min_height} placeholder='Min-height'/>
+                                <input className={style.input} onChange={handleChange} name="max_height" type="max_height" value={input.max_height} placeholder='Max-height'/>
+                                
                         </div>
-                        <div>
+                        <div >
                             <input 
                                 className={style.input}
                                 placeholder='Life Span'
@@ -123,14 +131,36 @@ export default function DogCreated (){
                                 placeholder='Image'
                                 type='text'
                                 name='image'
-                                value={input.imagen}
+                                value={input.image}
                                 onChange={(e) => handleChange(e)}
                                 >   
 
                             </input>
                         </div>
                         <div className={style.content}> 
-                            <select 
+
+                        <select name="temperaments" onChange={handleSelect}  type="text" >
+                                    <option value={null}></option>
+                                    {temperaments.map((e, id)=>{
+                                    return (
+                                        <option key={id} value={e.name}>{e.name}</option>
+                                        )
+                                    })}
+                                </select>
+                
+                                { temps.map((e, id) =>{
+                                    return ( 
+                                        <React.Fragment key={id}>
+                                            
+                                            <div className={style.tempSelect}>{e}
+                                            <button className={style.btnTemp} value={e} onClick={handleClick}>X</button>
+                                            </div>
+                            
+                                        </React.Fragment>
+                                        )
+                                    })    
+                                }
+                            {/* <select 
                                 className={style.temptContainer}
                                 type='text'
                                 name='temperament'
@@ -139,21 +169,30 @@ export default function DogCreated (){
                                 required>
                                     <option value={input.temperament}>Temperaments</option>
                                 
-                                {
-                                    temperament?.map((e) => (
+                                {temperament?.map((e,id) => (
                                         <option  
-                                            className={style.l}                                          
-                                            value={e.name} 
+                                            className={style.l}                         value={e.name} 
                                             key={e.id}>                                   
                                             {e.name}
                                         </option>                                          
                                         ))                                 
                                     }
-                            </select>  
-                            <ul>
+                                     
+                            </select>   */}
+                           {/*  <ul>
                                 <li className={style.li}>{input.temperament.map(i => i + ", ")}</li>
-                            </ul>                                          
+                            </ul>      */}
+                                 {/* {temperament.map((e,id)=>{
+                                return(
+                                    <React.Fragment key={id}>
+                                        <ul>
+                                <li className={style.li}>{input.temperament?.map(i => i + ", ")}</li>
+                                <button value={e.name} onClick={handleClick}>x</button>
+                                </ul>
+                                </React.Fragment>)
+                            })}                                */}
                         </div>
+
                         <button 
                             className={style.submit} 
                             type= "submit" 

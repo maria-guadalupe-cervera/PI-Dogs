@@ -46,6 +46,7 @@ h1 {
     background-color: #fdf6fc5d;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.377), 0 0 10px rgba(255, 255, 255, 0.377), 0 0 10px rgba(255, 255, 255, 0.377);
     transition-delay: 0.2s;
+    transition: 0.8s;
     
 }
 

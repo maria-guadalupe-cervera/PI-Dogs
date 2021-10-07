@@ -10,14 +10,16 @@ export default function Card({name,image,temperament,weight}){
             <h4 className={style.breed}>{name}</h4>
          </div>
            <div className={style.overlay}>
-              
+               <div className={style.text}>
+              <span>Weight:</span>
             <h3 className={style.peso}>
-                {weight}
+              {weight} (Lb)
             </h3>
-           
+           <span>Temperament:</span>
             <h2 className={style.titleTemps}>
             {temperament}
             </h2>
+            </div>
             </div>
         </div>
         </div>

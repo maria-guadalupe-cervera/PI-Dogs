@@ -166,6 +166,7 @@ select:hover{
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.377), 0 0 10px rgba(255, 255, 255, 0.377), 0 0 10px rgba(255, 255, 255, 0.377);
     border: none;
     color: rgb(66, 2, 45);
+    transition: 0.8s;
 }
 
 
@@ -190,22 +191,21 @@ select:hover{
   
 .pagination li {
     color: aliceblue;
-    display: inline-flex;
-    padding: 12px;
-    margin-left: 2px;
+    display:inline-flex;
+    padding: 10px;
+    margin: 2px;
     border: none;
     cursor: pointer;
     background-color: #c485ba83;
     border-radius: 10%;
     list-style:none;
-    width: 5px;
-    height: 5px;
+    width: 10px;
+    height: 10px;
     font-size: 12px;
-    align-items: center
+    align-items: center;
 }
 .pagination li:hover{
-    width: 8px;
-    height: 8px;
+    transition: 0.8s;
     background-color: #fdf6fc73;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.377), 0 0 10px rgba(255, 255, 255, 0.377), 0 0 10px rgba(255, 255, 255, 0.377);
     border: none;
