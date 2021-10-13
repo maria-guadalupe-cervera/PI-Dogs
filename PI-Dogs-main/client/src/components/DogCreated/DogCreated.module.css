@@ -1,9 +1,8 @@
+
 .content {
     display: flex;
     flex-direction: column;
     border-radius: 3px;
-    /* padding-left: 4px;
-    padding-bottom: 3px; */
     font-weight: bold;
     margin-top:7px;
     width: 180px;
@@ -37,12 +36,14 @@ form{
 }
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
 
-body{ background-image: url(../../media/patitas.jpg);
+.bg{
+     background-image: url(../../media/patitas.jpg);
     background-position: center; 
     background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;
-    height: 100vh; }
+    height: 100vh; 
+}
     
 .all{
     

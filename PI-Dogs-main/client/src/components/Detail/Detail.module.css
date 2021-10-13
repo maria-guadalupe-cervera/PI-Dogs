@@ -1,4 +1,14 @@
-
+.all{
+    background-image: url(../../media/patitas.jpg);
+    background-position: center; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    overflow: hidden;
+    height: 100%; 
+   
+    position:fixed
+}
 .title {
     text-decoration: 'none';
     padding: px;

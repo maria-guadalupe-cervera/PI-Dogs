@@ -1,6 +1,6 @@
 
 import axios from 'axios';
-import { DOG_FILTER_BY_TEMPERAMENT } from '../utils/utils';
+/* import { DOG_FILTER_BY_TEMPERAMENT } from '../utils/utils'; */
 
 export function getDogs(){
     return async function (dispatch) {
@@ -82,6 +82,8 @@ export function byOrderWeight(payload) {
     }
 };
 export function filterByTemp(temp){
-    return{type:'DOG_FILTER_BY_TEMPERAMENT',
-    payload:temp}
+    return{
+        type:'DOG_FILTER_BY_TEMPERAMENT',
+    payload:temp
+    }
 };

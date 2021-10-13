@@ -26,7 +26,7 @@ export default function DogCreated (){
     useEffect(() => {
         dispatch(getTemperaments());
         
-    },[]);
+    }/* ,[] */);
 
     function handleChange(e){
         e.preventDefault()
@@ -104,14 +104,18 @@ export default function DogCreated (){
                             </input>
                         </div>
                         <div className={style.minMax}>
-                                <input onChange={handleChange} className={style.input} name="min_weight" type="min_weight" value={input.min_weight} placeholder='Min_weight'/>
-                                <input onChange={handleChange}  className={style.input}name="max_weight" type="max_weight" value={input.max_weight} placeholder='Max_weight'/>
+                                <input onChange={handleChange} className={style.input} name="min_weight" type="min_weight" value={input.min_weight} placeholder='Min_weight'
+                                required/>
+                                <input onChange={handleChange}  className={style.input}name="max_weight" type="max_weight" value={input.max_weight} placeholder='Max_weight'
+                                required/>
             
                         </div>
                         <div className={style.minMax}>
             
-                                <input className={style.input}onChange={handleChange} name="min_height" type="min_height" value={input.min_height} placeholder='Min-height'/>
-                                <input className={style.input} onChange={handleChange} name="max_height" type="max_height" value={input.max_height} placeholder='Max-height'/>
+                                <input className={style.input}onChange={handleChange} name="min_height" type="min_height" value={input.min_height} placeholder='Min-height'
+                                required/>
+                                <input className={style.input} onChange={handleChange} name="max_height" type="max_height" value={input.max_height} placeholder='Max-height'
+                                required/>
                                 
                         </div>
                         <div >
