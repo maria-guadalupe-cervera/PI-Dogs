@@ -5,7 +5,8 @@ const path = require('path');
 const {
   DB_USER, DB_PASSWORD, DB_HOST,
 } = process.env;
-
+// En el archivo .env coloco los datos para conectar con mi base de datos (así no son públicos)
+// En mi DB creo la tabla 'dogs'
 const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/dogs`, {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
@@ -34,6 +35,9 @@ const { Dog, Temperament } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
+
+// La relación entre ambas entidades debe ser de muchos a muchos ya que una raza de perro puede tener varios "temperamentos" en simultaneo y, a su vez, un "temperamento" puede corresponder a múltiples razas de perro distintas.
+
 Dog.belongsToMany(Temperament,{through:"dog_temperament"})
 Temperament.belongsToMany(Dog,{through:"dog_temperament"})
 module.exports = {

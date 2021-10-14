@@ -3,7 +3,7 @@
 // Crea una raza de perro en la base de datos
 const{Router}=require('express');
 const router=Router();
-const{Dog, Temperament}=require('../db.js');
+const{Dog, Temperament}=require('../db.js'); 
 
 router.post('/dog',async(req,res)=>{
     let{
@@ -14,7 +14,7 @@ router.post('/dog',async(req,res)=>{
         image,
         createInDb,
         temperament
-    }=req.body
+    }=req.body //info que recibo por body
 
     let dogCreated=await Dog.create({
         name,
@@ -23,7 +23,7 @@ router.post('/dog',async(req,res)=>{
         life_span,
         image,
         createInDb
-    })
+    }) 
     let dogDb=await Temperament.findAll({
         where:{name:temperament}
     });

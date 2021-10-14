@@ -13,9 +13,9 @@ router.get('/dogs/:id', async (req, res) => {
     const {id} = req.params; 
     const dogsTotal = await allDogs();
     if(id){
-        let dogsId = await dogsTotal.filter(d => d.id == (id)); 
+        let dogsId = await dogsTotal.filter(d => d.id == (id)); //traigo los perros que coincidan
         dogsId.length ? 
-        res.status(200).send(dogsId) :
+        res.status(200).send(dogsId) ://si no mensaje de error
         res.status(404).send('Sorry, that dog is not available. Try again ❤')
     }
 });   

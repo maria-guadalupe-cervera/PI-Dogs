@@ -1,8 +1,8 @@
 
 import axios from 'axios';
-/* import { DOG_FILTER_BY_TEMPERAMENT } from '../utils/utils'; */
 
-export function getDogs(){
+
+export function getDogs(){ //esta función obtiene los datos de los perros
     return async function (dispatch) {
         var json = await axios.get("http://localhost:3001/dogs");
         return dispatch({
@@ -12,7 +12,7 @@ export function getDogs(){
         }) 
     }; 
 };
-export function dogDetail(id) {
+export function dogDetail(id) { //traigo los detalles del perro con esa id
     return async function(dispatch) {
         try {
             var json = await axios.get('http://localhost:3001/dogs/' + id);
@@ -27,7 +27,7 @@ export function dogDetail(id) {
 };
 
 
-export function getNameDogs (name){ 
+export function getNameDogs (name){ //traigo los perros que coincidan con ese name pasado por query
     return async function(dispatch) { 
         var json = await axios.get("http://localhost:3001/dogs?name=" + name );
         return dispatch({
@@ -39,7 +39,7 @@ export function getNameDogs (name){
 }; 
 
 export function getTemperaments() {
-    return async function (dispatch){
+    return async function (dispatch){//traigo los temperamentos (TODOS)
         var json = await axios.get("http://localhost:3001/temperament/");
         return dispatch({
             type: 'GET_TEMPERAMENTS',
@@ -50,7 +50,7 @@ export function getTemperaments() {
     }
 };
 
-export function filterDogsCreated (payload){
+export function filterDogsCreated (payload){ //filtro por si son creados o de la api
     return {
         type: 'FILTER_DOGS_CREATED',
         payload
@@ -58,32 +58,32 @@ export function filterDogsCreated (payload){
 };
 
 
-export function postDogs(payload) {
+export function postDogs(payload) { //me manda la info posteada
     return async function (dispatch){
         var json = await axios.post("http://localhost:3001/dog/",payload); 
-        console.log(json);
+        
         return json;
 
     }
 }
 
 
-export function byOrder(payload) {
+export function byOrder(payload) { //ordeno alfabeticamente
     return {
         type: 'ORDER',
         payload
     }
 }; 
 
-export function byOrderWeight(payload) {
+export function byOrderWeight(payload) {//ordeno por tamaño
     return {
         type: 'ORDER_WEIGHT',
         payload
     }
 };
-export function filterByTemp(temp){
+export function filterByTemp(payload){//filtro por temperamento
     return{
         type:'DOG_FILTER_BY_TEMPERAMENT',
-    payload:temp
+    payload
     }
 };

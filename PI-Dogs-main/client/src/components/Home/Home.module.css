@@ -9,6 +9,9 @@
 position:fixed;
 
 }
+.filterTemp{
+    z-index: 5;
+}
 .nav{
     background-color: rgba(196, 165, 189, 0.521);
     backdrop-filter: blur(1px);

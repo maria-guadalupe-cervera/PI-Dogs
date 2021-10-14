@@ -28,13 +28,13 @@ const app = require('../../src/app.js');
 const { Dog, Temperament,conn } = require('../../src/db.js');
 
 const agent = session(app);
-const dog = {
+/* const dog = {
   id: "c27ef91-0e8b-4fda-a041-0c8e20104587",
   name: 'Pug',
   height: "1-50",
   weight: "1-50",
   life_span: "135"
-};
+}; */
 
 describe('Dog routes', () => {
   before(() => conn.authenticate()

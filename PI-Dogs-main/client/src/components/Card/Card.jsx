@@ -1,7 +1,7 @@
 import React from "react";
 import style from'./Card.module.css';
 
-export default function Card({name,image,temperament,weight}){
+export default function Card({name,image,temperament,weight}){//destucturin de la info de cada card
     return(
         <div>
         <div className={style.box}>

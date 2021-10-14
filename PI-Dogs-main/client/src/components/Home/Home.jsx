@@ -7,20 +7,24 @@ import {
   byOrder,
   byOrderWeight,
   filterDogsCreated,
-  filterByTemp
-} from "../../actions/index";
-import Card from "../Card/Card";
-import Paged from "../Paged/Paged";
+  filterByTemp,
+  getTemperaments
+} from "../../actions/index"; //importo las acciones
+import Card from "../Card/Card";//importo las cartas de cada perro
+import Paged from "../Paged/Paged";//importo el paginado}
+import SearchBar from "../SearchBar/SearchBar";//importo el input de búsqueda
 import style from "./Home.module.css";
-import SearchBar from "../SearchBar/SearchBar";
+
 
 
 export default function Home() {
   const dispatch = useDispatch();
   const allDogs = useSelector((state) => state.dogs);
+  /* const temperaments=useSelector((state)=>state.temperament) */
+
+  //pagination
   const [currentPage, setCurrentPage] = useState(1);
-  const [order, setOrder] = useState("");
-  const [dogsPage /* ,setDogPage */] = useState(8);
+  const [dogsPage] = useState(8);
   const indexLastDog = currentPage * dogsPage;
   const indexFirstDog = indexLastDog - dogsPage;
   const currentDog = allDogs.slice(indexFirstDog, indexLastDog);
@@ -29,9 +33,15 @@ export default function Home() {
     setCurrentPage(numPage);
   };
 
+  const [order,setOrder] = useState("");
+
   useEffect(() => {
     dispatch(getDogs());
   }, [dispatch]);
+
+  useEffect(()=>{
+    dispatch(getTemperaments())
+  },[]);
 
   function handleClick(e) {
     e.preventDefault();
@@ -39,6 +49,7 @@ export default function Home() {
   }
 
   function handleFilter(e) {
+    e.preventDefault();
     dispatch(filterDogsCreated(e.target.value));
   }
 
@@ -55,7 +66,11 @@ export default function Home() {
     setCurrentPage(1);
     setOrder(e.target.value);
   }
-  
+ /*  function handleFilterByTemp(e){
+    e.preventDefault();
+    dispatch(filterByTemp(e.target.value))
+  } */
+  /* console.log(temperaments) */
 
   return (
     <div className={style.containsAll}>
@@ -72,11 +87,21 @@ export default function Home() {
           Refresh
         </button>
         <br />
+        
         <select onClick={(e) => handleFilter(e)} className={style.selectAC}>
           <option value="All">All</option>
           <option value="Created">Created</option>
         </select>
-      
+        <div className={style.filterTemp}>
+     {/*  <select className={style.temps} onChange={(e)=>handleFilterByTemp(e)}>
+        <option value='All'>All Temperaments</option>
+        {temperaments&&temperaments.map((e)=>{
+          return(
+            <option value={e.name}>{e.name}</option>
+          )
+        })}
+        </select> */}
+        </div>
         <div className={style.search}>
           <SearchBar />
         </div>

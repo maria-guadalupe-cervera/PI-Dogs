@@ -36,6 +36,7 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: true
     },
+    // Este parámetro ayuda a distingir los perros de la api de los creados
     createInDb: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
